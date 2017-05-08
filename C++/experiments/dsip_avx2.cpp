@@ -10,7 +10,7 @@ using namespace std;
 const int NMAX = 2010;
 
 int N, M;
-int X[NMAX] __attribute__((aligned(256))), Y[NMAX] __attribute__((aligned(256)));
+int X[NMAX] __attribute__((aligned(32))), Y[NMAX] __attribute__((aligned(32)));
 
 class Reader {
 public:
@@ -128,7 +128,7 @@ int main() {
 			ans1 = _mm256_add_epi32(ans1, _eq);
 			ans2 = _mm256_add_epi32(ans2, _gr);
 		}
-//		int _ans1[8] __attribute__((aligned(256))), _ans2[8] __attribute__((aligned(256)));
+//		int _ans1[8] __attribute__((aligned(32))), _ans2[8] __attribute__((aligned(32)));
 //		_mm256_store_si256((__m256i *)_ans1, ans1);
 //		_mm256_store_si256((__m256i *)_ans2, ans2);
 //		int __ans1 = _ans1[0] + _ans1[1] + _ans1[2] + _ans1[3] + _ans1[4] + _ans1[5] + _ans1[6] + _ans1[7];
